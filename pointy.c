@@ -5,15 +5,14 @@ int main() {
 	unsigned int x = 2112314153;
 	
 	//Declare a char * that points to the address of your unsigned int.
-	char * pointer = &x;
-	unsigned int * p = &x;
+	char * pointer = (char*)&x;
 	
 	//Print out your int in hex. 
-	printf("int: %u \nhex: %x \np = %p\n\n", x, x, p);
+	printf("int: %u \nhex: %x\n\n", x, x);
 	
 	//Use your pointer to print out each individual byte of your int.
 	for (int num = 0; num < sizeof(x); num++) {
-		printf("pointer:%c \np-hex: %hhx\n\n", pointer, pointer);
+		printf("p-hex: %hhx\n", *pointer);
 		pointer++;
 	}
 	
